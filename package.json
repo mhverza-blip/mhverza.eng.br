@@ -1,0 +1,29 @@
+{
+  "name": "meu-site",
+  "version": "1.0.0",
+  "description": "Site moderno e responsivo criado para o domínio",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "build": "echo 'Build completed - static files ready for deployment'",
+    "deploy": "echo 'Ready for deployment to your hosting provider'"
+  },
+  "keywords": [
+    "website",
+    "html",
+    "css",
+    "javascript",
+    "responsive",
+    "modern"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seuusuario/meu-site.git"
+  },
+  "homepage": "https://seudominio.com"
+}
