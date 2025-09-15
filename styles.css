@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
+    --primary-color: #87CEEB;
+    --primary-dark: #5F9EA0;
     --secondary-color: #f59e0b;
     --accent-color: #10b981;
     --text-primary: #1f2937;
@@ -42,9 +42,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--primary-color);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--primary-dark);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -59,9 +59,11 @@ body {
 }
 
 .nav-brand h2 {
-    color: var(--primary-color);
+    color: white;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
 }
 
 .nav-menu {
@@ -72,14 +74,14 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-primary);
+    color: white;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 .nav-link::after {
@@ -89,7 +91,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: white;
     transition: width 0.3s ease;
 }
 
@@ -106,7 +108,7 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background: var(--text-primary);
+    background: white;
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -117,7 +119,7 @@ body {
     display: flex;
     align-items: center;
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -324,6 +326,71 @@ body {
     color: white;
 }
 
+/* Education Section */
+.education {
+    padding: 100px 0;
+    background: var(--bg-primary);
+}
+
+.education-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.education-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+}
+
+.education-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.education-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.education-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.education-institution {
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.education-year {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
 /* Services Section */
 .services {
     padding: 80px 0;
@@ -385,26 +452,39 @@ body {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 600px;
+    width: 100%;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     background: white;
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease;
+    width: 100%;
+    min-height: 60px;
+    text-align: center;
+}
+
+.contact-item > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .contact-item:hover {
@@ -416,7 +496,7 @@ body {
     color: var(--primary-color);
     width: 50px;
     height: 50px;
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(30, 64, 175, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -427,10 +507,13 @@ body {
     font-weight: 600;
     margin-bottom: 0.25rem;
     color: var(--text-primary);
+    text-align: center;
 }
 
 .contact-item p {
     color: var(--text-secondary);
+    text-align: center;
+    margin: 0;
 }
 
 .contact-form {
@@ -468,15 +551,15 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--bg-dark);
+    background: #000000;
     color: white;
-    padding: 60px 0 20px;
+    padding: 40px 0 20px;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
 }
 
@@ -484,11 +567,13 @@ body {
 .footer-section h4 {
     margin-bottom: 1rem;
     color: white;
+    text-align: center;
 }
 
 .footer-section p {
-    color: #9ca3af;
-    margin-bottom: 1rem;
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .footer-section ul {
@@ -507,6 +592,20 @@ body {
 
 .footer-section ul li a:hover {
     color: white;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
 }
 
 .social-links {
@@ -536,8 +635,8 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #374151;
-    color: #9ca3af;
+    border-top: 1px solid #333333;
+    color: #cccccc;
 }
 
 /* Responsive Design */
@@ -607,6 +706,21 @@ body {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .education-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .education-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .education-icon i {
+        font-size: 1.5rem;
     }
 
     .stats {
